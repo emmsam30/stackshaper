@@ -28,7 +28,12 @@ async def access_log(request: Request, call_next):
 
 @app.get("/health")
 def health():
-    return {"ok": True, "service": "backend"}
+    return {
+        "ok": True,
+        "service": "backend",
+        "version": "v1.0.0"
+    }
+
 
 @app.get("/dbcheck")
 def dbcheck():
